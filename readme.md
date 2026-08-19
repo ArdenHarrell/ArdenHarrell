@@ -15,15 +15,22 @@
 
 ## `$ whoami`
 
-```go
-package arden
+```python
+from dataclasses import dataclass, field
 
-var Profile = Engineer{
-    Role:       "Senior Software + Data Engineer",
-    Years:      20,
-    Languages:  []string{"ColdFusion", "JavaScript", "SQL", "Java", "Python", "PHP"},
-    Focus:      []string{"REST/SOAP integration", "ETL & data migration", "SQL tuning"},
-}
+@dataclass
+class Engineer:
+    role: str
+    years: int
+    languages: list[str] = field(default_factory=list)
+    focus: list[str] = field(default_factory=list)
+
+PROFILE = Engineer(
+    role = "Senior Software + Data Engineer",
+    years = 20,
+    languages = ["ColdFusion", "JavaScript", "SQL", "Java", "Python", "PHP"],
+    focus = ["REST/SOAP integration", "ETL & data migration", "SQL tuning"]
+)
 ```
 
 <br/>
